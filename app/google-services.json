@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "797727966881",
+    "firebase_url": "https://androidprojet-dpsh.firebaseio.com",
+    "project_id": "androidprojet-dpsh",
+    "storage_bucket": "androidprojet-dpsh.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797727966881:android:ba14f7a3649c1b2df552e0",
+        "android_client_info": {
+          "package_name": "com.isen.androidprojetdpsh"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "797727966881-6fk1htk75lhm71ga061ompmac3q1hfvb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8p0ZxVagIGtMOaoKBS_R0jT6xoBIQuR4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "797727966881-6fk1htk75lhm71ga061ompmac3q1hfvb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
