@@ -32,5 +32,9 @@
     <string name="not_signed_in">Please Sign In</string>
     <string name="signed_in_success">Signed in successful !</string>
     <string name="signed_in_fail">Signed in failed !</string>
+    <string name="new_account_button">Register</string>
+
+    <string name="log_out_button">Log Out</string>
+    <string name="log_out">You have been logged out</string>
 
 </resources>
