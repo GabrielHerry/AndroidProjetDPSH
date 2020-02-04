@@ -11,11 +11,25 @@ class CreatePostActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_create_post)
 
+        val intent1 = Intent(this, WallActivity::class.java)
+
         saveButton.setOnClickListener {
             startActivity(intent1)
+
+            // creer un post !
+            var newPost = PostOnWall(editTitle.text.toString(),editDescription.text.toString(),editPicture.text.toString())
+            GlobalsVar.posts.add(newPost)
         }
+
+
+        testButton.setOnClickListener {
+            var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg")
+            GlobalsVar.posts.add(testpost)
+            startActivity(intent1)
+        }
+
     }
 
-    val intent1 = Intent(this, CreatePostActivity::class.java)
-    
+
+
 }

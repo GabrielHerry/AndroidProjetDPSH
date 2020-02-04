@@ -39,9 +39,6 @@ class PostOnWallAdapter (val posts: ArrayList<PostOnWall>): RecyclerView.Adapter
                 .into(view.postPicture)
         }
     }
-
-
-
 }
 
 /*
