@@ -1,4 +1,5 @@
 <resources>
+    <!-- Other -->
     <string name="app_name">AndroidProjetDPSH</string>
     <string name="hello">Bonjour</string>
     <string name="validate">VALIDER</string>
@@ -7,8 +8,22 @@
     <string name="save">SAUVEGARDER</string>
     <string name="fields_empty">Veuillez remplir tous les champs</string>
     <string name="hint_password">hint a password...</string>
-    <string name="hint_email">hint an email...</string>
-    <string name="sign_in">Connexion</string>
-    <string name="sign_up">Deconnexion</string>..
+    <string name="hint_email">hint a password...</string>
+    <string name="sign_in">hint a password...</string>
+    <string name="sign_up">hint a password...</string>..
+
+    <!-- WallActivity -->
+    <string name="textWall">Bienvenue sur le mur !</string>
+
+
+    <!-- LoginActivity strings -->
+    <string name="intro_name_connexion">Welcome to the DPSH app !</string>
+    <string name="intro_login">Connexion</string>
+    <string name="email">Email: </string>
+    <string name="password">Password: </string>
+    <string name="connexion_button">Log In</string>
+    <string name="not_signed_in">Please Sign In</string>
+    <string name="signed_in_success">Signed in successful !</string>
+    <string name="signed_in_fail">Signed in failed !</string>
 
 </resources>
