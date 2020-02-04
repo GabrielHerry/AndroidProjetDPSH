@@ -14,6 +14,13 @@
 
     <!-- WallActivity -->
     <string name="textWall">Bienvenue sur le mur !</string>
+    <string name="createPostButton">Créer un post</string>
+
+    <!-- CreatePostActivity -->
+    <string name="firstText">Créer un post</string>
+    <string name="createtitle">Entrer le titre</string>
+    <string name="createdescription">Entrer la description</string>
+    <string name="createpicture">Donner l adresse http de la photo</string>
 
 
     <!-- LoginActivity strings -->

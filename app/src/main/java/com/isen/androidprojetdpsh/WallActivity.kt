@@ -1,8 +1,10 @@
 package com.isen.androidprojetdpsh
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+
 import kotlinx.android.synthetic.main.activity_wall.*
 
 class WallActivity : AppCompatActivity() {
@@ -11,17 +13,25 @@ class WallActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wall)
 
-        var posts : ArrayList<PostOnWall> = arrayListOf()
-
-        // creation first fake post
-        var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg")
-
-        posts.add(testpost)
-
-
         postRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        postRecyclerView.adapter = PostOnWallAdapter(posts)
+        postRecyclerView.adapter = PostOnWallAdapter(GlobalsVar.posts) {
+            val intent = Intent(this, ShowPostActivity::class.java)
 
+            intent.putExtra("postId", it.id)
 
+            startActivity(intent)
+        }
+
+        val intent1 = Intent(this, CreatePostActivity::class.java)
+
+        createPostButton.setOnClickListener {
+            startActivity(intent1)
+        }
+
+     /*   val intent2 = Intent(this, LoginActivity::class.java)
+
+            disconnexionButton.setOnClickListener {
+                startActivity(intent2)
+        }*/
     }
 }

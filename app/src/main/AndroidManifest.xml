@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-package="com.isen.androidprojetdpsh">
+    package="com.isen.androidprojetdpsh">
 
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -21,9 +21,12 @@ package="com.isen.androidprojetdpsh">
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
     </activity>
+    <activity android:name=".ShowPostActivity"></activity>
     <activity android:name=".MainActivity"/>
     <activity android:name=".WallActivity" />
     <activity android:name=".TestFirebaseActivity"></activity>
+    <activity android:name=".CreatePostActivity" />
+
 </application>
 
 </manifest>

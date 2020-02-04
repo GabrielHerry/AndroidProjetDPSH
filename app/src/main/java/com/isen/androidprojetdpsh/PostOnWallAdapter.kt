@@ -10,7 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.post.view.*
 
-class PostOnWallAdapter (val posts: ArrayList<PostOnWall>): RecyclerView.Adapter<PostOnWallAdapter.postOnWallViewHolder>() {
+class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnWall)-> Unit) :
+    RecyclerView.Adapter<PostOnWallAdapter.postOnWallViewHolder>() {
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): postOnWallViewHolder {
@@ -24,11 +25,12 @@ class PostOnWallAdapter (val posts: ArrayList<PostOnWall>): RecyclerView.Adapter
 
     override fun onBindViewHolder(holder: postOnWallViewHolder, position: Int) {
         val post = posts[position]
-        holder.bind(post)
+        holder.bind(post, callBack)
     }
 
-    class postOnWallViewHolder(val view: View, val context: Context): RecyclerView.ViewHolder(view) {
-        fun bind(post: PostOnWall) {
+    class postOnWallViewHolder(val view: View, val context: Context) :
+        RecyclerView.ViewHolder(view) {
+        fun bind(post: PostOnWall, callBack: (PostOnWall)-> Unit) {
 
             view.postTitle.text = post.title
             view.postDescription.text = post.description
@@ -38,8 +40,11 @@ class PostOnWallAdapter (val posts: ArrayList<PostOnWall>): RecyclerView.Adapter
                 .load(post.picture)
                 .into(view.postPicture)
 
-          //  Log.i("URL picture", user.picture?.large)
+            view.setOnClickListener {
+                callBack.invoke(post)
+            }
         }
+
     }
 }
 
