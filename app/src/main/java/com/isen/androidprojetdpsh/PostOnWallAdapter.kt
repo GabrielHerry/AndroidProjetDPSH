@@ -25,13 +25,12 @@ class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnW
 
     override fun onBindViewHolder(holder: postOnWallViewHolder, position: Int) {
         val post = posts[position]
-        holder.bind(post)
-        callBack.invoke(post)
+        holder.bind(post, callBack)
     }
 
     class postOnWallViewHolder(val view: View, val context: Context) :
         RecyclerView.ViewHolder(view) {
-        fun bind(post: PostOnWall) {
+        fun bind(post: PostOnWall, callBack: (PostOnWall)-> Unit) {
 
             view.postTitle.text = post.title
             view.postDescription.text = post.description
@@ -40,10 +39,15 @@ class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnW
                 .with(context)
                 .load(post.picture)
                 .into(view.postPicture)
+
+            view.setOnClickListener {
+                callBack.invoke(post)
+            }
         }
 
     }
 }
+
 
 /*
 class AllResultAdapter(val results: Array<User>): RecyclerView.Adapter<AllResultAdapter.UsersViewHolder>() {
