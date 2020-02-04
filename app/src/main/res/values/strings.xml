@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">AndroidProjetDPSH</string>
+
+    <!-- LoginActivity strings -->
+    <string name="intro_name_connexion">Welcome to the DPSH app !</string>
+    <string name="intro_login">Connexion</string>
+    <string name="email">Email: </string>
+    <string name="password">Password: </string>
+    <string name="connexion_button">Log In</string>
+    <string name="not_signed_in">Please Sign In</string>
+    <string name="signed_in_success">Signed in successful !</string>
+    <string name="signed_in_fail">Signed in failed !</string>
+
+    <!-- <string name=""></string> -->
 </resources>
