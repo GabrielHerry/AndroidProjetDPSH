@@ -37,8 +37,6 @@ class PostOnWallAdapter (val posts: ArrayList<PostOnWall>): RecyclerView.Adapter
                 .with(context)
                 .load(post.picture)
                 .into(view.postPicture)
-
-          //  Log.i("URL picture", user.picture?.large)
         }
     }
 

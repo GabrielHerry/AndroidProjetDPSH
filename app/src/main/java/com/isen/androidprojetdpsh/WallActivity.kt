@@ -1,5 +1,6 @@
 package com.isen.androidprojetdpsh
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -22,6 +23,10 @@ class WallActivity : AppCompatActivity() {
         postRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         postRecyclerView.adapter = PostOnWallAdapter(posts)
 
+        val intent1 = Intent(this, CreatePostActivity::class.java)
 
+        createPostButton.setOnClickListener {
+            startActivity(intent1)
+        }
     }
 }
