@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">AndroidProjetDPSH</string>
+    <string name="hello">Bonjour</string>
+    <string name="validate">VALIDER</string>
+    <string name="logout">QUITTER</string>
+    <string name="verify">VERIFIER</string>
+    <string name="save">SAUVEGARDER</string>
+    <string name="fields_empty">Veuillez remplir tous les champs</string>
+    <string name="hint_password">hint a password...</string>
+    <string name="hint_email">hint an email...</string>
+    <string name="sign_in">Connexion</string>
+    <string name="sign_up">Deconnexion</string>..
+
 </resources>
