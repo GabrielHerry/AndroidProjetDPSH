@@ -1,17 +1,49 @@
 package com.isen.androidprojetdpsh
 
+import android.content.Context
 import android.os.Parcel
 import android.os.Parcelable
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.post.view.*
 
-class PostOnWallAdapter (val results: Array<PostOnWall>): RecyclerView.Adapter<PostOnWallAdapter.PostOnWallViewHolder>() {
+class PostOnWallAdapter (val posts: ArrayList<PostOnWall>): RecyclerView.Adapter<PostOnWallAdapter.postOnWallViewHolder>() {
 
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PostOnWallViewHolder {
-    val view = LayoutInflater.from(parent.context).inflate(R.layout.PostActivity, parent, false)
-    return UsersViewHolder(view, parent.context)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): postOnWallViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.post, parent, false)
+        return postOnWallViewHolder(view, parent.context)
+    }
+
+    override fun getItemCount(): Int {
+        return posts.count()
+    }
+
+    override fun onBindViewHolder(holder: postOnWallViewHolder, position: Int) {
+        val post = posts[position]
+        holder.bind(post)
+    }
+
+    class postOnWallViewHolder(val view: View, val context: Context): RecyclerView.ViewHolder(view) {
+        fun bind(post: PostOnWall) {
+
+            view.postTitle.text = post.title
+            view.postDescription.text = post.description
+
+            Picasso
+                .with(context)
+                .load(post.picture)
+                .into(view.postPicture)
+
+          //  Log.i("URL picture", user.picture?.large)
+        }
+    }
+
+
+
 }
 
 /*
