@@ -14,6 +14,7 @@ class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnW
     RecyclerView.Adapter<PostOnWallAdapter.postOnWallViewHolder>() {
 
 
+    
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): postOnWallViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.post, parent, false)
         return postOnWallViewHolder(view, parent.context)
