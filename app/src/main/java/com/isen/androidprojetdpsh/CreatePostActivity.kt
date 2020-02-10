@@ -17,13 +17,13 @@ class CreatePostActivity : AppCompatActivity() {
             startActivity(intent1)
 
             // creer un post !
-            var newPost = PostOnWall(editTitle.text.toString(),editDescription.text.toString(),editPicture.text.toString(),0)
+            var newPost = PostOnWall(editTitle.text.toString(), editDescription.text.toString(), editPicture.text.toString(), editPostDate.text.toString(), 0)
             GlobalsVar.posts.add(newPost)
         }
 
 
         testButton.setOnClickListener {
-            var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg",0)
+            var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg", "01/01/1901",0)
             GlobalsVar.posts.add(testpost)
             startActivity(intent1)
         }

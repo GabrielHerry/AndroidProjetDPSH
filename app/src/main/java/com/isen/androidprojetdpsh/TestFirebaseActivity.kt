@@ -5,6 +5,13 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.google.firebase.database.*
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
+import androidx.core.app.ComponentActivity.ExtraData
+import androidx.core.content.ContextCompat.getSystemService
+import android.icu.lang.UCharacter.GraphemeClusterBreak.T
+
+
 
 class TestFirebaseActivity : AppCompatActivity() {
 
@@ -25,9 +32,12 @@ class TestFirebaseActivity : AppCompatActivity() {
         // Write a message to the database
         val database = FirebaseDatabase.getInstance()
         val myRef = database.getReference("message")
+        //val myRef = database.getReference("https://console.firebase.google.com/project/androidprojet-dpsh/database/firestore/data~2F")
+
 
         myRef.setValue("Hello, World!")
         // [END write_message]
+
 
         // [START read_message]
 
@@ -53,4 +63,11 @@ class TestFirebaseActivity : AppCompatActivity() {
         })
         // [END read_message]
     }
+
+    /*
+    private fun writeNewUser(userId: String, name: String, email: String?) {
+        val user = User(name, email)
+        database.child("users").child(userId).setValue(user)
+    }
+    */
 }

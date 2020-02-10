@@ -34,7 +34,8 @@ class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnW
         fun bind(post: PostOnWall, callBack: (PostOnWall)-> Unit) {
 
             view.postTitle.text = post.title
-            view.postDescription.text = post.description
+            var description = post.description + "\n" + post.postDate
+            view.postDescription.text = description
 
             Picasso
                 .with(context)
