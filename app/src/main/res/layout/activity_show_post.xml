@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="79dp"
-        android:text="Vous etes sur le post n° ${nbOfPost}"
+        android:text="Vous etes sur le post n° ..."
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -43,12 +43,15 @@
         android:id="@+id/commentEditText"
         android:layout_width="284dp"
         android:layout_height="71dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="64dp"
         android:ems="10"
         android:hint="Commentaire"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@+id/commentRecyclerView"
-        tools:layout_editor_absoluteX="63dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/commentRecyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/commentRecyclerView"

@@ -15,16 +15,15 @@ class CreatePostActivity : AppCompatActivity() {
 
         saveButton.setOnClickListener {
                         // creer un post !
-            var newPost = PostOnWall(editTitle.text.toString(), editDescription.text.toString(), editPicture.text.toString(), GlobalsVar.nbOfPost + 1)
-            GlobalsVar.posts.add(newPost)
+            val newPost = PostOnWall(editTitle.text.toString(), editDescription.text.toString(), editPicture.text.toString(), GlobalsVar.nbOfPost + 1)
+            GlobalsVar.posts?.add(newPost)
             GlobalsVar.nbOfPost++
             startActivity(intent1)
         }
         testButton.setOnClickListener {
             var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg", GlobalsVar.nbOfPost + 1)
 
-            var currentId = intent.getIntExtra("postId",0)
-            GlobalsVar.posts.add(testpost)
+            GlobalsVar.posts?.add(testpost)
             GlobalsVar.nbOfPost++
 
             startActivity(intent1)

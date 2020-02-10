@@ -1,17 +1,13 @@
 package com.isen.androidprojetdpsh
 
 import android.content.Context
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.comments.view.*
-import kotlinx.android.synthetic.main.post.view.*
 
-class CommentsAdapter(val post: PostOnWall, val callBack: (CommentOnPost)-> Unit) :
+class CommentsAdapter(val comm: ArrayList<CommentOnPost>?) :
         RecyclerView.Adapter<CommentsAdapter.commentsViewHolder>() {
 
 
@@ -21,26 +17,21 @@ class CommentsAdapter(val post: PostOnWall, val callBack: (CommentOnPost)-> Unit
     }
 
     override fun getItemCount(): Int {
-        return post.comments.count()
+        return comm!!.count()
     }
 
     override fun onBindViewHolder(holder: commentsViewHolder, position: Int) {
-        val commment = post.comments[position] //commentaire
-        holder.bind(post, position)
-        callBack.invoke(commment)
+        val comment = comm!![position] //commentaire
+        holder.bind(comment)
+
     }
 
     class commentsViewHolder(val view: View, val context: Context) :
             RecyclerView.ViewHolder(view) {
-        fun bind(post: PostOnWall, position:Int) {
+        fun bind(comm: CommentOnPost) {
 
-            view.commentTextView.text = post.comments[position].comment
-            view.postDescription.text = post.description
-
-            Picasso
-                    .with(context)
-                    .load(post.picture)
-                    //.into(view.postPicture)
+            view.commentTextView.text = comm.comment
+            //view.postDescription.text = post.description
         }
 
     }

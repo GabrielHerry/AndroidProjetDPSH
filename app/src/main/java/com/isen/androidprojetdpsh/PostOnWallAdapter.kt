@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.post.view.*
 
-class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnWall)-> Unit) :
+class PostOnWallAdapter(val posts: ArrayList<PostOnWall>?, val callBack: (PostOnWall)-> Unit) :
     RecyclerView.Adapter<PostOnWallAdapter.postOnWallViewHolder>() {
 
 
@@ -20,13 +20,20 @@ class PostOnWallAdapter(val posts: ArrayList<PostOnWall>, val callBack: (PostOnW
     }
 
     override fun getItemCount(): Int {
-        return posts.count()
+        if (posts != null) {
+            return posts.count()
+        }
+        return 0
     }
 
     override fun onBindViewHolder(holder: postOnWallViewHolder, position: Int) {
-        val post = posts[position]
-        holder.bind(post)
-        callBack.invoke(post)
+        val post = posts?.get(position)
+        if (post != null) {
+            holder.bind(post)
+        }
+        if (post != null) {
+            callBack.invoke(post)
+        }
     }
 
     class postOnWallViewHolder(val view: View, val context: Context) :
