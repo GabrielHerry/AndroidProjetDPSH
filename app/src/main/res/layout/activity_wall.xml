@@ -49,4 +49,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/createPostButton" />
+
+    <Button
+        android:id="@+id/readButton"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="80dp"
+        android:text="read"
+        app:layout_constraintBottom_toTopOf="@+id/postRecyclerView"
+        app:layout_constraintEnd_toStartOf="@+id/textWall" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

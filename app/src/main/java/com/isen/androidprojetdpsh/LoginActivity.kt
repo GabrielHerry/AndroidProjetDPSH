@@ -70,8 +70,8 @@ class LoginActivity : AppCompatActivity() {
 
     private fun updateUI(user: FirebaseUser?) {
         if (user != null) {
+            val intent = Intent( this, WallActivity::class.java)
             Toast.makeText(this, "${getString(R.string.signed_in_success)}", Toast.LENGTH_LONG).show()
-            val intent = Intent( this, MainActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
             startActivity(intent)
         } else {

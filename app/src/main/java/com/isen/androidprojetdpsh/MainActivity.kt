@@ -3,34 +3,22 @@ package com.isen.androidprojetdpsh
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_main.*
-import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
-    private var auth: FirebaseAuth? = null
+    companion object {
+        private const val TAG = "KotlinActivity"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Reuse the layout used in MainActivity
         setContentView(R.layout.activity_main)
 
-        buttonTestFirebase.setOnClickListener {
-            startActivity(Intent(this, TestFirebaseActivity::class.java))
-        }
 
-        auth = FirebaseAuth.getInstance()
-
-        signOutButton.setOnClickListener {
-            signOut()
-        }
-    }
-
-    private fun signOut() {
-        auth?.signOut()
-        Toast.makeText(this, "${getString(R.string.log_out)}", Toast.LENGTH_LONG).show()
-        val intent = Intent( this, LoginActivity::class.java)
-        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP
-        startActivity(intent)
     }
 }
