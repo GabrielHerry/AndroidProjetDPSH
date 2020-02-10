@@ -20,11 +20,10 @@ class CreatePostActivity : AppCompatActivity() {
             GlobalsVar.nbOfPost++
             startActivity(intent1)
         }
-
-
-
         testButton.setOnClickListener {
             var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg", GlobalsVar.nbOfPost + 1)
+
+            var currentId = intent.getIntExtra("postId",0)
             GlobalsVar.posts.add(testpost)
             GlobalsVar.nbOfPost++
 

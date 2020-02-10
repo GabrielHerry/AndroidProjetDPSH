@@ -1,6 +1,5 @@
 package com.isen.androidprojetdpsh
 
-import java.net.IDN
 
 class PostOnWall( //one post
     var title: String?,
@@ -8,7 +7,7 @@ class PostOnWall( //one post
     var picture: String?,
     var id: Int?,
     var nbOfLike: Int = 0,
-    var comments: ArrayList<String>? = null
+    var comments: ArrayList<CommentOnPost> = arrayListOf()
 )
 
 
