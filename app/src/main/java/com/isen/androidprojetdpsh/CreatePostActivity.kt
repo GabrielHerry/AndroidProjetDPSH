@@ -27,11 +27,12 @@ class CreatePostActivity : AppCompatActivity() {
         }
 
 
-        testButton.setOnClickListener {
+      /*  testButton.setOnClickListener {
             var testpost = PostOnWall("Test", "My first post", "https://image.freepik.com/photos-gratuite/image-recadree-bel-homme-barbu_171337-2897.jpg",0)
             GlobalsVar.postsOnPhone?.add(testpost)
+            saveOnCloud (GlobalsVar.postsOnPhone)
             startActivity(intent1)
-        }
+        }                */
 
     }
 
