@@ -9,9 +9,10 @@
     <string name="firstText">Créer un post</string>
     <string name="createtitle">Entrer le titre</string>
     <string name="createdescription">Entrer la description</string>
-    <string name="createpicture">Donner l adresse http de la photo</string>
-
-
+    <string name="createpicture">Donner l\'adresse http de la photo</string>
+    <string name="like">J\'aime</string>
+    <string name="comment">Commenter</string>
+    <string name="postTitle">Vous êtes sur le post n° ${nbOfPost}</string>
 
 
 </resources>

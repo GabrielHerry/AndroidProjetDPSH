@@ -14,12 +14,22 @@ class WallActivity : AppCompatActivity() {
         setContentView(R.layout.activity_wall)
 
         postRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-        postRecyclerView.adapter = PostOnWallAdapter(GlobalsVar.posts)
+        postRecyclerView.adapter = PostOnWallAdapter(GlobalsVar.posts) {
+            val intent = Intent(this, ShowPostActivity::class.java)
+            intent.putExtra("postId", it.id)
+            startActivity(intent)
+        }
 
         val intent1 = Intent(this, CreatePostActivity::class.java)
 
         createPostButton.setOnClickListener {
             startActivity(intent1)
         }
+
+     /*   val intent2 = Intent(this, LoginActivity::class.java)
+
+            disconnexionButton.setOnClickListener {
+                startActivity(intent2)
+        }*/
     }
 }
