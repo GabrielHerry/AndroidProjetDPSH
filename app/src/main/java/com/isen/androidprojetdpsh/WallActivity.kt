@@ -34,9 +34,17 @@ class WallActivity : AppCompatActivity() {
             logOut()
         }
 
+        postRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+        postRecyclerView.adapter = PostOnWallAdapter(GlobalsVar.postsOnPhone) {
+            val intent = Intent(this, ShowPostActivity::class.java)
+
+            intent.putExtra("postId", it.id)
+
+            startActivity(intent)
+        }
 
         readButton.setOnClickListener {
-            postRecyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
+
             postRecyclerView.adapter = PostOnWallAdapter(GlobalsVar.postsOnPhone) {
                 val intent = Intent(this, ShowPostActivity::class.java)
 
@@ -64,9 +72,6 @@ class WallActivity : AppCompatActivity() {
         var database: DatabaseReference
         database = FirebaseDatabase.getInstance().reference
 
-       // database.child("posts").setValue(posts)
-       // val database = FirebaseDatabase.getInstance()
-      //  val myRef = database.getReference("posts")
 
         database.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
