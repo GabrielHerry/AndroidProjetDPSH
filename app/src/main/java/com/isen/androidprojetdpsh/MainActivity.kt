@@ -19,8 +19,6 @@ class MainActivity : AppCompatActivity() {
         // Reuse the layout used in MainActivity
         setContentView(R.layout.activity_main)
 
-        buttonTestFirebase.setOnClickListener {
-            startActivity(Intent(this, TestFirebaseActivity::class.java))
-        }
+
     }
 }
